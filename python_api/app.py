@@ -1,10 +1,12 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from flask_cors import CORS
 import bcrypt
 
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 password = b"kinsapassword"
 hashed = bcrypt.hashpw(password, bcrypt.gensalt())

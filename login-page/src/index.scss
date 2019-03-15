@@ -1,6 +1,17 @@
+@import 'styles/fonts/fonts.scss';
+@import 'styles/colors/colors.scss';
 
 body {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0 -15px !important;
+  background: linear-gradient(to top, $sharp-blue 0%,$baby-blue 100%);
+  text-align: center;
+  font-family: $NexaLight;
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+
+  .title{
+    font-family: $NexaBold;
+  }
 
 }

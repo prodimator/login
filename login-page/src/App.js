@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Login from './views/login/login';
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login />
+        <p>Congrats! You logged in.</p>
       </div>
     );
   }

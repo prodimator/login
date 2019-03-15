@@ -10,7 +10,7 @@ export default class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            error: ''
+            error: '',
         };
 
         this.handleUserChange = this.handleUserChange.bind(this);
@@ -41,8 +41,13 @@ export default class Login extends Component {
     }
 
     submitButton() {
-        axios.get(`https://api.github.com/users/${this.state.username}`)
-            .then(response => console.log(response))
+        axios.post('http://127.0.0.1:5000/login',{
+            username: this.state.username,
+            password: this.state.password
+        })
+        .then(response => this.props.history.push('/app'))
+        .catch(error => this.displayError());
+
     }
 
     displayError() {
@@ -52,7 +57,6 @@ export default class Login extends Component {
     clearErrorMessage() {
         this.setState({ error: '' });
     }
-
 
     render() {
         return (
