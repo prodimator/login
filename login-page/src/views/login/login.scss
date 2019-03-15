@@ -1,0 +1,53 @@
+@import '../../styles/colors/colors.scss';
+
+
+.login-component{
+    height: 100vh;
+
+    .login-container{
+        background: $login-white;
+        height: 500px;
+        border-radius: 20px;
+        box-shadow: 20px 20px 40px 0px rgba(0,0,0,0.2);
+        max-width: 450px;
+
+        .login-header{
+            padding-top: 100px;
+            color: $sharp-blue;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .username-entry{
+            padding-top: 20px;
+
+
+        }
+        .password-entry{
+            padding-top: 20px;
+        }
+
+        input{
+            background: $gray;
+            width: 50%;
+            line-height: 2rem;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        button{
+            background: $sharp-blue;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            width: 150px;
+            color: $white;
+            margin-top: calc(2rem + 20px);
+            margin-bottom: 20px;
+            outline: none;
+        }
+        .error-message{
+            color: red;
+        }
+    }
+}
