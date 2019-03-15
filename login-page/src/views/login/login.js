@@ -16,7 +16,7 @@ export default class Login extends Component {
         this.handleUserChange = this.handleUserChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.submitButton = this.submitButton.bind(this);
+        this.submitPayload = this.submitPayload.bind(this);
         this.displayError = this.displayError.bind(this);
         this.clearErrorMessage = this.clearErrorMessage.bind(this);
 
@@ -37,10 +37,10 @@ export default class Login extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.displayError();
+        this.submitPayload();
     }
 
-    submitButton() {
+    submitPayload() {
         axios.post('http://127.0.0.1:5000/login',{
             username: this.state.username,
             password: this.state.password
@@ -75,7 +75,7 @@ export default class Login extends Component {
                             </form>
                         </div>
                         <div className="submit">
-                            <button onClick={this.submitButton}>
+                            <button onClick={this.submitPayload}>
                                 Submit
                             </button>
                         </div>
