@@ -34,4 +34,4 @@ class User(Resource):\
 
 api.add_resource(User, "/login")
 
-app.run(debug=True)
+app.run(debug=True, host="0.0.0.0")
