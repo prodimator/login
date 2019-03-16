@@ -47,7 +47,6 @@ export default class Login extends Component {
         })
         .then(response => this.props.history.push('/app'))
         .catch(error => this.displayError());
-
     }
 
     displayError() {
