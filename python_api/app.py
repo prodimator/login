@@ -2,30 +2,20 @@ from flask import Flask, request
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS
 import bcrypt
-
+import users as Users
 
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
-password = b"kinsapassword"
-hashed = bcrypt.hashpw(password, bcrypt.gensalt())
-
-users = [
-    {
-        "username": "kinsauser",
-        "password": hashed
-    }
-]
-
 @app.route('/login', methods=['POST']) 
-def post():
+def login():
     if request.method == 'POST':
         parser = reqparse.RequestParser()
         parser.add_argument("username")
         parser.add_argument("password")
         args = parser.parse_args()
-        for user in users:
+        for user in Users.users:
             if(args["username"] == user["username"]):
                 verifyPassword = bytes(args["password"], encoding="ascii")
                 if (bcrypt.checkpw(verifyPassword, user["password"])):
