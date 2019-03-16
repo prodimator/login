@@ -10,34 +10,34 @@ The Python back-end runs in a separate docker container from the React front-end
 
 Follow these steps to build the image and run the container for the back-end container:
 
-`cd python_api`
-`docker build -t python-api:latest .`
-`docker run -d --name python-api -p 5000:5000 python-api:latest`
+- `cd python_api`
+- `docker build -t python-api:latest .`
+- `docker run -d --name python-api -p 5000:5000 python-api:latest`
 
 Next, build the image and run the front-end container:
 
-`cd login-page`
-`docker build -t login-app:latest .`
-`docker run -d --name login-app -p 3000:3000 login-app:latest`
+- `cd login-page`
+- `docker build -t login-app:latest .`
+- `docker run -d --name login-app -p 3000:3000 login-app:latest`
 
-Go to http://localhost:3000 to check out the app!
+Go to `http://localhost:3000` to check out the app!
 
 #### Without using Docker
 
 Make sure to use python 3 when running the program.
 Follow these steps to start the python flask server:
 
-`cd python_api`
-`pip3 install -r requirements.txt`
-`python3 app.py`
+- `cd python_api`
+- `pip3 install -r requirements.txt`
+- `python3 app.py`
 
 To build and run the front-end:
 
-`cd login-app`
-`npm install`
-`npm start`
+- `cd login-app`
+- `npm install`
+- `npm start`
 
-Go to http://localhost:3000 to check out the app!
+Go to `http://localhost:3000` to check out the app!
 
 ## Assumptions
 
